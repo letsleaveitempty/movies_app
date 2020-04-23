@@ -7,6 +7,7 @@ gem "bootstrap-sass"
 gem "devise"
 gem "draper"
 gem "haml-rails"
+gem "httparty"
 gem "jquery-rails"
 gem "sass-rails"
 gem "sqlite3"
@@ -27,6 +28,7 @@ group :development do
 end
 
 group :development, :test do
+  gem "byebug"
   gem "capybara"
   gem "factory_bot_rails"
   gem "faker"
@@ -38,4 +40,5 @@ end
 
 group :test do
   gem "shoulda-matchers"
+  gem "webmock"
 end
