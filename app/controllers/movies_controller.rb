@@ -1,12 +1,13 @@
 class MoviesController < ApplicationController
   before_action :authenticate_user!, only: [:send_info]
+  before_action :set_page, only: [:index]
 
   def index
-    @movies = Movie.all.decorate
+    @movies = Movie.all.limit(10).offset(@page * 10).decorate
   end
 
   def show
-    @movie = Movie.find(params[:id])
+    @movie = Movie.find(params[:id]).decorate
   end
 
   def send_info
@@ -19,5 +20,11 @@ class MoviesController < ApplicationController
     file_path = "tmp/movies.csv"
     MovieExporter.new.call(current_user, file_path)
     redirect_to root_path, notice: "Movies exported"
+  end
+
+  private
+
+  def set_page
+    @page = (params[:page] || 0).to_i
   end
 end

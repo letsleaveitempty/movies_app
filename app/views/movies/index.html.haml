@@ -2,3 +2,7 @@
   .col-md-8.col-md-offset-2.col-lg-8.col-lg-offset-2
     %h1.text-center Movies
     = render 'movies_table', movies: @movies
+
+    %h3.text-center
+      = link_to "<< previous", movies_path(page: @page - 1) unless @page == 0
+      = link_to "next >>", movies_path(page: @page + 2)
