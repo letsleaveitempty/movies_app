@@ -1,5 +1,5 @@
 require "rails_helper"
-require 'webmock/rspec'
+require "webmock/rspec"
 
 describe "Movies requests", type: :request do
   before do
