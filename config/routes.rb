@@ -15,4 +15,8 @@ Rails.application.routes.draw do
       get :export
     end
   end
+  namespace :api do
+    get :movie_list, controller: "movies"
+    get :movie, controller: "movies"
+  end
 end

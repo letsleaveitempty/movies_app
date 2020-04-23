@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 gem "rails", "5.2"
 
+gem 'active_model_serializers', '~> 0.10.0'
 gem "annotate"
 gem "bootstrap-sass"
 gem "devise"
