@@ -1,4 +1,7 @@
-# Please do NOT open any pull requests to this repository!
+~~# Please do NOT open any pull requests to this repository!~~
+## cloned repository with my solutions to task 1,2 & 4
+
+===================================================================
 
 ## Welcome to Pairguru App!
 Place where we examine our candidates
