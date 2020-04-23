@@ -20,9 +20,9 @@ class ApplicationController < ActionController::Base
     render json: { error: exception.message }, status: :not_found
   end
 
-  def respond_with_json(data, status_code: 200)
+  def respond_with_json(data, options: {})
     respond_to do |format|
-      format.json { render json: data, status: status_code }
+      format.json { render json: data, options: options }
     end
   end
 end
