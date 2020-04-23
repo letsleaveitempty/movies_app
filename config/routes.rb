@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     end
   end
   namespace :api do
-    get :list, controller: "movies"
+    get :movie_list, controller: "movies"
+    get :movie, controller: "movies"
   end
 end
