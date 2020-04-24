@@ -1,6 +1,15 @@
 ~~# Please do NOT open any pull requests to this repository!~~
 ## cloned repository with my solutions to task 1,2 & 4
 
+## task 1: consume API
+https://github.com/letsleaveitempty/pairguru/pull/1
+
+## task 2: build API
+https://github.com/letsleaveitempty/pairguru/pull/2
+
+## task 4: validate brackets
+https://github.com/letsleaveitempty/pairguru/pull/3
+
 ===================================================================
 
 ## Welcome to Pairguru App!
