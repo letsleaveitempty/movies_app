@@ -1,34 +1,48 @@
-class TitleBracketsValidator
-  require "byebug"
+class TitleBracketsValidator < ActiveModel::Validator
   BRACKETS = {
     "(" => ")",
     "[" => "]",
     "{" => "}"
   }.freeze
 
-  def initialize(title)
-    @title = title
+  def validate(record)
+    return if no_brackets(record)
+    detect_empty_brackets(record)
+    balance_brackets(record)
   end
 
-  def validate(title)
-    string_brackets = title.title.gsub(/[^\(\)\{\}\[\]]/, "")
-    return true if string_brackets.empty?
+  private
 
-    check_brackets(string_brackets)
+  def no_brackets(record)
+    record.title.gsub(/[^\(\)\{\}\[\]]/, "").empty?
   end
 
-  def check_brackets(string_brackets)
-    open_brackets = []
+  def detect_empty_brackets(record)
+    empty_brackets = []
 
-    string_brackets.each_char do |bracket|
-      if BRACKETS.key?(bracket)
-        open_brackets << bracket
-      elsif BRACKETS.value?(bracket)
-        return false if open_brackets.empty?
-        BRACKETS[open_brackets.pop] == bracket
+    BRACKETS.each do |k, v|
+      empty_brackets << "#{k}#{v}"
+    end
+
+    add_error(record) if empty_brackets.any? { |b| record.title.include?(b) }
+  end
+
+  def balance_brackets(record)
+    opened_brackets = []
+
+    record.title.each_char do |char|
+      if BRACKETS.key?(char)
+        opened_brackets << char
+      elsif BRACKETS.value?(char)
+        add_error(record) if opened_brackets.empty?
+        add_error(record) unless BRACKETS[opened_brackets.pop] == char
       end
     end
 
-    open_brackets.empty?
+    add_error(record) unless opened_brackets.empty?
+  end
+
+  def add_error(record)
+    record.errors.add(:base, "Unbalanced or empty brackets")
   end
 end
