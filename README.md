@@ -1,14 +1,13 @@
-~~# Please do NOT open any pull requests to this repository!~~
-## cloned repository with my solutions to task 1,2 & 4
+## cloned [pairguru](https://github.com/netguru/pairguru) repository with my solutions to task 1,2 & 4
 
 ## task 1: consume API
-https://github.com/letsleaveitempty/pairguru/pull/1
+https://github.com/letsleaveitempty/movies_app/pull/1
 
 ## task 2: build API
-https://github.com/letsleaveitempty/pairguru/pull/2
+https://github.com/letsleaveitempty/movies_app/pull/2
 
 ## task 4: validate brackets
-https://github.com/letsleaveitempty/pairguru/pull/3
+https://github.com/letsleaveitempty/movies_app/pull/3
 
 ===================================================================
 
@@ -73,24 +72,3 @@ It should have 10 users that have the most comments in last week (from 7 days ag
 This page will be very popular. We don't want to spam database with many queries in one pageview.
 
 Hint: It can be solved by using ActiveRecord.
-
-
-## For recruiters
-There is private [pairguru](https://github.com/netguru/pairguru) repository. In pull requests you can find example solutions for this tasks.
-
-### To contribute fixes/updates
-* Fork repository
-* Create pull request (from forked repository, not pairguru itself)
-* Ask for review one of the contributors
-* After PR is merged branch will be automatically propagated to public repo for candidates
-
-### To add new tasks (please do!)
-* Add task description in this README
-* Create example solution on a branch with `solution` in branch name (eg. `solution-task-7-description`) - it won't be propagated to public repo this way
-* You can create specific setup for your task (eg. some prepared bug, configured tool to be used)
-  * Create new branch with this setup - it will be propagated to public repo
-  * Push branch to [pairguru](https://github.com/netguru/pairguru). It will be propagated to public repo
-  * Specify in this task description that it should be solved on this branch
-* If you change something in the repo please try to update ruby/rails/gems versions to the latest.
-
-
