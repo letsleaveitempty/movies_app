@@ -11,11 +11,6 @@ https://github.com/letsleaveitempty/movies_app/pull/3
 
 ===================================================================
 
-## Welcome to Pairguru App!
-Place where we examine our candidates
-
-[For recruiters](#for-recruiters)
-
 ## For candidates
 ### :hammer: Setup
 
